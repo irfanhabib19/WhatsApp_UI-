@@ -21,22 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: Text("Hello World"),
+      home: ResponsiveLayout(
+          mobileScreen: MobileScreenLayout(), webScreen: WebScreenlayout()),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  Widget build(BuildContext context) {
-    return ResponsiveLayout(
-        mobileScreen: MobileScrennlayout(), webScreen: WebScreenlayout());
   }
 }
