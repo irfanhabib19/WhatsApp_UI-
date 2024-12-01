@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:whatsapp_ui/Screens/mobile_scrennLayout.dart';
+import 'package:whatsapp_ui/Screens/web_screenLayout.dart';
+import 'package:whatsapp_ui/colors.dart';
+import 'package:whatsapp_ui/responsive/responsive_layout.dart';
 
 void main() {
   runApp(DevicePreview(builder: (context) => MyApp()));
@@ -13,12 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'WhatsApp UI',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
       ),
-      home: const MyHomePage(),
+      home: Text("Hello World"),
     );
   }
 }
@@ -32,22 +35,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink,
-        // This trailing comma makes auto-formatting nicer for build methods.
-      ),
-      body: Container(),
-    );
+    return ResponsiveLayout(
+        mobileScreen: MobileScrennlayout(), webScreen: WebScreenlayout());
   }
 }
