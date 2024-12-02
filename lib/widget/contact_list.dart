@@ -11,13 +11,25 @@ class ContactList extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(info[index]['name'].toString()),
+            title: Text(
+              info[index]['name'].toString(),
+              style: TextStyle(fontSize: 18),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 6),
               child: Text(
                 info[index]['message'].toString(),
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 14),
               ),
+            ),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                info[index]['profilePic'].toString(),
+              ),
+            ),
+            trailing: Text(
+              info[index]["time"].toString(),
+              style: TextStyle(fontSize: 12),
             ),
           );
         },
