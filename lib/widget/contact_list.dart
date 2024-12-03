@@ -2,58 +2,57 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_ui/colors.dart';
 import 'package:whatsapp_ui/info.dart';
 
-class ContactList extends StatelessWidget {
-  const ContactList({super.key});
+class ContactsList extends StatelessWidget {
+  const ContactsList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 0.0),
-            child: Column(
+        padding: const EdgeInsets.only(top: 0.0),
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: info.length,
+          itemBuilder: (context, index) {
+            return Column(
               children: [
-                SingleChildScrollView(
-                  child: InkWell(
-                    onTap: () {},
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
                     child: ListTile(
                       title: Text(
                         info[index]['name'].toString(),
-                        style: TextStyle(fontSize: 14),
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                       subtitle: Padding(
-                        padding: const EdgeInsets.only(top: 3),
+                        padding: const EdgeInsets.only(top: 6.0),
                         child: Text(
                           info[index]['message'].toString(),
-                          style: TextStyle(fontSize: 9),
+                          style: const TextStyle(fontSize: 15),
                         ),
                       ),
                       leading: CircleAvatar(
-                        radius: 15,
                         backgroundImage: NetworkImage(
                           info[index]['profilePic'].toString(),
                         ),
+                        radius: 30,
                       ),
                       trailing: Text(
-                        info[index]["time"].toString(),
-                        style: TextStyle(fontSize: 7),
+                        info[index]['time'].toString(),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                Divider(
-                  color: dividerColor,
-                  indent: 85,
-                )
+                const Divider(color: dividerColor, indent: 85),
               ],
-            ),
-          );
-        },
-        itemCount: info.length,
-      ),
-    );
+            );
+          },
+        ));
   }
 }

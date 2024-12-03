@@ -15,13 +15,13 @@ class WebScreenlayout extends StatelessWidget {
             children: [
               // web profile bar
               //  web search bar
-              ContactList(),
+              ContactsList(),
             ],
           ),
         ),
         // webScreen
         Container(
-          width: MediaQuery.of(context).size.width * 0.69,
+          width: MediaQuery.of(context).size.width * 0.60,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/backgroundImage.png"),
