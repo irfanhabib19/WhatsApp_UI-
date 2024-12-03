@@ -11,7 +11,7 @@ const info = [
     'message': 'Hello, whats up',
     'time': '2:25 pm',
     'profilePic':
-        'https://www.socialketchup.in/wp-content/uploads/2020/05/fi-vill-JOHN-DOE.jpg',
+        'https://4.bp.blogspot.com/-BHhUazKytmw/VbCfWPqrOJI/AAAAAAAAB7c/qj6WVX3du-s/s1600/51b91bba5a3fd9b6c8b9c53bc0ab6c65.jpg',
   },
   {
     'name': 'Naman Ranawat',

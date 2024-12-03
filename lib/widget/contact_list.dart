@@ -9,49 +9,48 @@ class ContactList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: InkWell(
-                    onTap: () {},
-                    child: ListTile(
-                      title: Text(
-                        info[index]['name'].toString(),
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(top: 6),
-                        child: Text(
-                          info[index]['message'].toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ),
-                      leading: CircleAvatar(
-                        radius: 22,
-                        backgroundImage: NetworkImage(
-                          info[index]['profilePic'].toString(),
-                        ),
-                      ),
-                      trailing: Text(
-                        info[index]["time"].toString(),
-                        style: TextStyle(fontSize: 12),
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: ListTile(
+                    title: Text(
+                      info[index]['name'].toString(),
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Text(
+                        info[index]['message'].toString(),
+                        style: TextStyle(fontSize: 9),
                       ),
                     ),
+                    leading: CircleAvatar(
+                      radius: 15,
+                      backgroundImage: NetworkImage(
+                        info[index]['profilePic'].toString(),
+                      ),
+                    ),
+                    trailing: Text(
+                      info[index]["time"].toString(),
+                      style: TextStyle(fontSize: 7),
+                    ),
                   ),
-                );
-              },
-              itemCount: info.length,
+                ),
+                Divider(
+                  color: dividerColor,
+                  indent: 85,
+                )
+              ],
             ),
-          ),
-          Divider(
-            color: dividerColor,
-            indent: 85,
-          )
-        ],
+          );
+        },
+        itemCount: info.length,
       ),
     );
   }

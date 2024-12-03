@@ -21,7 +21,7 @@ class WebScreenlayout extends StatelessWidget {
         ),
         // webScreen
         Container(
-          width: MediaQuery.of(context).size.width * 0.75,
+          width: MediaQuery.of(context).size.width * 0.69,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/backgroundImage.png"),
