@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/colors.dart';
 import 'package:whatsapp_ui/widget/contact_list.dart';
+import 'package:whatsapp_ui/widget/web_chatAppBar.dart';
 import 'package:whatsapp_ui/widget/web_profileBar.dart';
 import 'package:whatsapp_ui/widget/web_search.dart';
 
@@ -28,6 +30,11 @@ class WebScreenlayout extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage("assets/backgroundImage.png"),
                   fit: BoxFit.cover)),
+          child: Column(
+            children: [
+              WebChatappbar(),
+            ],
+          ),
         )
       ],
     ));
