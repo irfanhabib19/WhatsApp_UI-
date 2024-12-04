@@ -23,12 +23,9 @@ class WebSearch extends StatelessWidget {
             decoration: InputDecoration(
                 filled: true,
                 fillColor: searchBarColor,
-                prefix: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4),
-                    child: Icon(Icons.search),
-                  ),
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Icon(Icons.search),
                 ),
                 hintText: "Search for chat",
                 hintStyle: TextStyle(fontSize: 15, color: Colors.white),
