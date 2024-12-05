@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_ui/info.dart';
 import 'package:whatsapp_ui/widget/myMessage_card.dart';
+import 'package:whatsapp_ui/widget/senderMessage_card.dart';
 
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
@@ -14,6 +15,9 @@ class ChatList extends StatelessWidget {
               message: messages[index]['text'].toString(),
               date: messages[index]['time'].toString());
         }
+        return SendermessageCard(
+            message: messages[index]['text'].toString(),
+            date: messages[index]['time'].toString());
       },
       itemCount: messages.length,
     );

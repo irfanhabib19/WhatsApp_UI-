@@ -32,22 +32,26 @@ class MymessageCard extends StatelessWidget {
                 ),
               ),
               Positioned(
+                  bottom: 4,
+                  right: 10,
                   child: Row(
-                children: [
-                  Text(
-                    date,
-                    style: TextStyle(fontSize: 13, color: Colors.white10),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    Icons.done_all,
-                    color: Colors.white60,
-                    size: 20,
-                  )
-                ],
-              ))
+                    children: [
+                      Text(
+                        date,
+                        style: TextStyle(
+                            fontSize: 13,
+                            color: const Color.fromARGB(26, 253, 251, 251)),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.done_all,
+                        color: Colors.white60,
+                        size: 20,
+                      )
+                    ],
+                  ))
             ],
           ),
         ),
