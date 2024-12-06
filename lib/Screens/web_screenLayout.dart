@@ -35,6 +35,32 @@ class WebScreenlayout extends StatelessWidget {
             children: [
               WebChatappbar(),
               Expanded(child: ChatList()),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.07,
+                decoration: BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                    color: dividerColor,
+                  )),
+                  color: chatBarMessage,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.emoji_emotions_outlined,
+                          color: Colors.grey,
+                        )),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.attach_file_outlined,
+                          color: Colors.grey,
+                        )),
+                  ],
+                ),
+              )
             ],
           ),
         )
