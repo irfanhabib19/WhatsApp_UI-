@@ -58,6 +58,27 @@ class WebScreenlayout extends StatelessWidget {
                           Icons.attach_file_outlined,
                           color: Colors.grey,
                         )),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 15, top: 6, bottom: 5),
+                        child: TextField(
+                            decoration: InputDecoration(
+                                hintText: "Type a message ",
+                                fillColor: searchBarColor,
+                                filled: true,
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                  borderRadius: BorderRadius.circular(21),
+                                ),
+                                contentPadding: EdgeInsets.only(left: 20))),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.mic),
+                      color: Colors.grey,
+                    ),
                   ],
                 ),
               )
